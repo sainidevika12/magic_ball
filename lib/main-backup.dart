@@ -37,9 +37,6 @@ class _BallState extends State<Ball> {
       child: FlatButton(
         onPressed: () {
           print('Start');
-          Scaffold(
-            backgroundColor: Colors.red,
-          );
           setState(() {
             ballNumber = Random().nextInt(5) + 1;
             print('ballNumber = $ballNumber');
