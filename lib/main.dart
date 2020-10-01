@@ -8,11 +8,19 @@ void main() => runApp(
       ),
     );
 
-class BallPage extends StatelessWidget {
+class BallPage extends StatefulWidget {
+  @override
+  _BallPageState createState() => _BallPageState();
+
+}
+
+class _BallPageState extends State<BallPage> {
+  Colors bucket_to_hold_value_of_bk_color = Colors.blue;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: bucket_to_hold_value_of_bk_color,
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
         title: Text('Ask me Anything'),
@@ -37,10 +45,8 @@ class _BallState extends State<Ball> {
       child: FlatButton(
         onPressed: () {
           print('Start');
-          Scaffold(
-            backgroundColor: Colors.red,
-          );
           setState(() {
+            bucket_to_hold_value_of_bk_color = Colors.green;
             ballNumber = Random().nextInt(5) + 1;
             print('ballNumber = $ballNumber');
           });
